@@ -7,7 +7,7 @@
 body {
     font-family: system-ui, sans-serif;
     background: #232323;
-    color: #ffffff;
+    color: white;
     line-height: 1.5;
 }
 
@@ -16,11 +16,8 @@ img {
     display: block;
 }
 
-/* ===== HEADER ===== */
 header {
     position: sticky;
-    top: 0;
-    z-index: 100;
     background: #181818;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 0 20px;
@@ -28,28 +25,30 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    top: 0;
+    z-index: 100;
 }
 
 .logo a {
+    display: block;
     font-size: 22px;
     font-weight: bold;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     padding: 16px 0;
-    display: block;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
-    list-style: none;
     justify-content: flex-start;
+    list-style: none;
 }
 
 nav ul li a {
+    display: block;
     font-size: 15px;
     font-weight: 500;
-    display: block;
     padding: 16px 20px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
@@ -58,16 +57,15 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffffff;
-    border-bottom: 2px solid #ffffff;
+    color: white;
+    border-bottom: 2px solid white;
 }
 
 nav ul li a.active {
-    color: #ffffff;
-    border-bottom: 2px solid #ffffff;
+    color: white;
+    border-bottom: 2px solid white;
 }
 
-/* ===== MAIN ===== */
 main {
     padding: 40px 10%;
 }
@@ -76,13 +74,12 @@ main h2 {
     margin-bottom: 15px;
 }
 
-/* ===== HERO ===== */
 .hero {
-    text-align: center;
     padding: 80px 20px;
     margin-bottom: 50px;
-    background: linear-gradient(135deg, rgba(46, 46, 46, 0.8), rgba(24, 24, 24, 0.8));
     border-radius: 14px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(50, 50, 50, 0.8), rgba(25, 25, 25, 0.8));
 }
 
 .hero h1 {
@@ -96,7 +93,6 @@ main h2 {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* ===== ABOUT ===== */
 .about {
     margin-bottom: 50px;
 }
@@ -107,7 +103,6 @@ main h2 {
     font-size: 16px;
 }
 
-/* ===== ADVANTAGES ===== */
 .advantages {
     margin-bottom: 50px;
 }
@@ -126,7 +121,7 @@ main h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     transition: transform .2s;
 }
 
@@ -135,8 +130,8 @@ main h2 {
 }
 
 .card img {
-    width: 64px;
-    height: 64px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
 }
 
@@ -149,7 +144,6 @@ main h2 {
     font-size: 14px;
 }
 
-/* ===== GAMES SECTIONS ===== */
 .games-section {
     margin-bottom: 50px;
 }
@@ -180,8 +174,12 @@ main h2 {
     border-radius: 8px;
 }
 
-/* ===== BUTTONS ===== */
-.btn-buy, .btn-mes {
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-buy, .btn-more {
     height: 50px;
     width: 150px;
     background-color: white;
@@ -195,16 +193,15 @@ main h2 {
     margin-top: auto;
 }
 
-.btn-buy:hover, .btn-mes:hover {
+.btn-buy:hover, .btn-more:hover {
     background-color: rgb(189, 189, 189);
     cursor: pointer;
 }
 
-.btn-buy:active, .btn-mes:active {
+.btn-buy:active, .btn-more:active {
     background-color: rgb(128, 128, 128);
 }
 
-/* ===== FOOTER ===== */
 footer {
     background: #181818;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -239,10 +236,165 @@ footer {
 }
 
 .social a:hover {
-    color: #ffffff;
+    color: white;
 }
 
-/* ===== RESPONSIVE ===== */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.controls select {
+    background: #2e2e2e;
+    color: white;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.toggle-view {
+    display: flex;
+    gap: 8px;
+}
+
+.toggle-view button {
+    background: #2e2e2e;
+    color: rgba(255, 255, 255, 0.75);
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.toggle-view button.active {
+    background: white;
+    color: #232323;
+}
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-view .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.grid-view .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.grid-view .card h2 {
+    font-size: 15px;
+}
+
+.grid-view .card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.grid-view .card .price {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: auto;
+}
+
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list-view .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 12px 16px;
+}
+
+.list-view .card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.list-view .card h2 {
+    font-size: 15px;
+    flex: 1;
+}
+
+.list-view .card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    flex: 2;
+}
+
+.list-view .card .price {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.about-team {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.member-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: rgb(46, 46, 46);
+    padding: 2rem;
+    border-radius: 14px;
+}
+
+.member-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.member-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.member-info .role {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     main {
         padding: 20px 5%;
@@ -295,5 +447,21 @@ footer {
 
     footer {
         padding: 30px 5%;
+    }
+
+    .grid-view {
+        grid-template-columns: 1fr;
+    }
+
+    .list-view .card p {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .member-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }

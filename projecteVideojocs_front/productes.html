@@ -21,15 +21,13 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <h1>Productes</h1>
         </section>
-
         <section class="games-section">
             <div class="controls">
-                <select id="ordenar">
+                <select id="sort">
                     <option value="rating-desc">Puntuació: Major a menor</option>
                     <option value="rating-asc">Puntuació: Menor a major</option>
                     <option value="title-asc">Alfabètic: A - Z</option>
@@ -37,28 +35,26 @@
                     <option value="price-desc">Preu: Major a menor</option>
                     <option value="price-asc">Preu: Menor a major</option>
                 </select>
-                <div class="toggle-vista">
-                    <button id="btn-graella" class="active">Graella</button>
-                    <button id="btn-llistat">Llistat</button>
+                <div class="toggle-view">
+                    <button id="btn-grid" class="active">Graella</button>
+                    <button id="btn-list">Llistat</button>
                 </div>
             </div>
-
-            <div id="games" class="vista-graella"></div>
+            <div id="games" class="grid-view"></div>
         </section>
     </main>
-
     <footer>
         <div class="footer-content">
             <p><strong>CGames</strong> &copy; 2026</p>
             <p>Autor: Miquel Àngel Melis Binimelis</p>
             <ul class="social">
                 <li><a href="#">Instagram</a></li>
+                <li><a href="#">TikTok</a></li>
                 <li><a href="#">Twitter</a></li>
                 <li><a href="#">YouTube</a></li>
             </ul>
         </div>
     </footer>
-
     <script src="js/api.js"></script>
     <script src="js/productes.js"></script>
 </body>

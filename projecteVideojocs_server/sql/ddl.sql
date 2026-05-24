@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS game_creator;
+DROP TABLE IF EXISTS game_genre;
+DROP TABLE IF EXISTS game;
+DROP TABLE IF EXISTS creator;
+DROP TABLE IF EXISTS genre;
+
 CREATE TABLE game(
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(300) NOT NULL,
@@ -40,6 +46,6 @@ CREATE TABLE game_creator(
 
     PRIMARY KEY (game_id, creator_id),
 
-    CONSTRAINT fk_game FOREIGN KEY (game_id) REFERENCES game(id),
-    CONSTRAINT fk_creator FOREIGN KEY (creator_id) REFERENCES creator(id)
+    CONSTRAINT fk_gc_game FOREIGN KEY (game_id) REFERENCES game(id),
+    CONSTRAINT fk_gc_creator FOREIGN KEY (creator_id) REFERENCES creator(id)
 );

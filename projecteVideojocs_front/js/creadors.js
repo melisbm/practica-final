@@ -32,12 +32,21 @@ function loadCreators(order) {
             const card = document.createElement("div");
             card.classList.add("card");
             const img = document.createElement("img");
+            const a = document.createElement("a");
             img.src = creator.image_url;
+            a.href = `productes.html?creador=${creator.id}`;
             img.alt = creator.name;
             const creatorName = document.createElement("h2");
+            const creatorCountry = document.createElement("h3");
+            const gameCount = document.createElement("h3");
             creatorName.textContent = creator.name;
-            card.appendChild(img);
+            creatorCountry.textContent = creator.country;
+            gameCount.textContent = creator.game_count + " games published";
+            a.appendChild(img);
+            card.appendChild(a);
             card.appendChild(creatorName);
+            card.appendChild(gameCount);
+            card.appendChild(creatorCountry);
             container.appendChild(card);
         }
     });
